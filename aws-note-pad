@@ -1,0 +1,2913 @@
+characteristcs
+--------------
+remotely hosted
+on demand
+elasticity
+bandwidth
+
+
+arn:aws:iam::663859890751:mfa/root-account-mfa-device
+ATBVTQP4Q2GTGO4TC3BJKT5VYGRAIX7JESDPVF2RTDU75UXBNXLW6J2L65TDNJLC
+
+
+Kesava --
+deva --
+ashok --
+Fayaz --
+zakeer
+
+==========for GUI Linux========tested ubuntu WSL/
+https://www.microsoft.com/en-us/p/gwsl/9nl6kd1h33v3?activetab=pivot%3Aoverviewtab
+#desktop env for linux xfce4
+sudo apt-get install xfce4
+sudo apt-get install xfce4-session
+sudo apt-get install xfce4-goodies 
+create a shortcut with command "startxfce4"
+
+wsl default
+==================
+wsl --list
+wsl --setdefault <DistributionName>
+kali
+wsl
+wsl.exe --shutdown
+
+Now we use IASS 
+AZ = avaliablity zone
+==========================REDHAT==========================
+uname:sreehari,root
+pass:Google@123
+
+aws willhold one doller for temp trans to identify our identity
+
+sagarbumireddy1996@gmail.com
+manny luka magnotta
+
+gmail : dev.devopsengineer@gmail.com
+password :Google@123
+
+
+Redhat login for Subscription Manager --not working
+URL : https://access.redhat.com/tags/login
+Username : aurora.g00gle1@gmail.com/sreehari123123
+Password : Google@123
+
+=======Passwords=====
+
+KALI LINUX in WSL -sreehari and sreehari
+UBUNTU in WSL -sreehari and sreehari
+centos vm -sreehari and sreehari
+ 
+
+=====================htop=====================tested redhat/ubuntu-apt
+
+**** uptime / top / htop / stress ****
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install htop
+htop
+
+=================stress================tested in redhat
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install stree -y
+stress -c 1 -i 1 -m 1 --vm-bytes 250M -d 1 --hdd-bytes 5GB -t 300s
+
+EX Stress : load
+        CPU = 4 cpu
+        I/O  = 4 
+        VM = 256MB
+        HDD = 10GB 
+
+=================netdata==============//support for netdata not working
+yum update  --skip-broken --nobest
+#deedencise
+sudo yum update --nobest
+http://mirror.centos.org/centos/7/os/x86_64/Packages/autogen-libopts-5.18-5.el7.x86_64.rpm
+yum install http://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/autogen-5.18-5.el7.x86_64.rpm --nobest
+sudo yum install zlib-devel libuuid-devel libmnl-devel gcc make git autoconf autogen automake pkgconfig
+sudo yum install curl jq nodejs git -y
+
+# Install Netdata
+cd ~
+git clone https://github.com/firehol/netdata.git --depth=1
+cd netdata
+sudo ./netdata-installer.sh
+
+##firewall port 19999
+sudo firewall-cmd --permanent --zone=public --add-port=19999/tcp
+sudo firewall-cmd --reload
+
+================================os release============================//tested
+cat /etc/os-release
+
+==================================netdata===================================working in redhat ami
+#referece https://unixcop.com/how-to-install-netdata-on-centos-8/
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install epel-release -y
+yum install http://mirror.centos.org/centos/7/os/x86_64/Packages/autogen-libopts-5.18-5.el7.x86_64.rpm
+yum install http://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/autogen-5.18-5.el7.x86_64.rpm --nobest
+yum install git libuuid-devel autoconf automake pkgconfig zlib-devel curl findutils libmnl gcc make -y
+git clone https://github.com/netdata/netdata.git --depth=100
+yum install http://mirror.centos.org/centos/7/os/x86_64/Packages/autoconf-archive-2017.03.21-1.el7.noarch.rpm
+cd netdata
+./packaging/installer/install-required-packages.sh --non-interactive --dont-wait netdata
+./netdata-installer.sh
+
+systemctl start netdata
+systemctl enable netdata
+systemctl status netdata
+
+#for local systems
+firewall-cmd --permanent --add-port=19999/tcp
+firewall-cmd --reload
+
+=============================AWS class==========================
+
+Amazon AMI is based on "REDHART/CENTOS"
+ubuntu is based on DEbian (DEB package manager)
+Redhat uses RPM packet manager
+dpkg - debian pacage manager for ubuntu
+MAC os is just line UNIX
+
+
+
+==========================Public and private IP for Linux==========================tested ubuntu and redhat
+dig +short myip.opendns.com @resolver1.opendns.com     -- DEB
+curl ifconfig.me.    --RPM
+hostname -I | awk '{print $1}'     ----------private IP
+
+===============speedtest======================================tested ubuntu and redhat 
+sudo apt install speedtest-cli
+speedtest-cli
+
+sudo yum install speedtest-cli
+speedtest-cli
+
+
+========copy file using scp===============================//tested in ubuntu and red
+
+#mention name as -->ec2-user@publicDNS
+
+scp -i "sreekey.pem" cat.war ubuntu@ec2-3-137-212-69.us-east-2.compute.amazonaws.com:/tmp/cat.war
+
+aws user
+-----------
+username : sreehari
+password : Google@1234
+
+LTS means lng term support in ubuntu
+user permitions are added in aws in terms of polocies and roles 
+
+
+====================================PEM recover==================//tested in red
+In Recovery Server
+---------------------
+->stop first server and create recover server on the same region 
+->deteach the first server volume and attach to recovery server
+->execute all commands are placed here (dont format)
+->and deteach the volume from recovery drive and attached to first server with name "/dev/sdal" -- which means root volume
+
+
+sudo su -
+
+sudo mkdir recover-disk
+
+chmod 0777 recover-disk
+
+sudo mount -o nouuid /dev/xvdf2 recover-disk/
+
+cat /home/ecZ-user/.ssh/authorized_keys >> /var/recover-disk/home/ecZ-user/.ssh/authorized_keys
+
+sudo umount /var/recover-disk/
+
+Root Device Type
+
+/dev/sdal
+
+Additinal Volume Type
+
+/dev/sdf
+
+
+===========================LOAD BALENCERS=====================
+create two security groups, one for all instances and another one for Load balencer
+
+add load balencer security group source as "load balener security group"
+it will avoid from accessing instance from out side and allows only through load balencer Port 80 must be open in all security groups
+
+create a target group and based on userscript on httpd - instances and attah/register to load balencer
+
+
++=====================MOUNTING NEW VOLUME EBS===============//tested in red
+lsblk
+## sudo file -s /dev/xvdf
+sudo mkfs -t ext4 /dev/xvdf
+sudo mkdir newvolume/
+sudo mount /dev/xvdf newvolume/
+umount /dev/xvdf
+
+==============================MOUNT EFS/NFS===================//tested in redhat
+create a volue on EFS and excute two commands to attach the storage
+use "df" command to see where the drive is mounted or not 
+use "sudo umount efs" to release the EFS storage
+
+====AMAZON===============//tested
+sudo yum install -y amazon-efs-utils
+sudo mkdir efs
+sudo mount -t efs -o tls fs-0a820cadc4b0d7b57:/ efs
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0a820cadc4b0d7b57.efs.us-east-2.amazonaws.com:/ efs
+
+
+====REDHAT===========/tested
+
+sudo yum -y install nfs-utils
+sudo mkdir efs
+#ruu only second command
+#sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0a820cadc4b0d7b57.efs.us-east-2.amazonaws.com:/ efs
+
+====ubuntu=======/tested
+sudo apt-get -y install nfs-common
+sudo mkdir efs
+#sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0a820cadc4b0d7b57.efs.us-east-2.amazonaws.com:/ efs
+
+
+
+
+===========================WINSCP to S3 Bucket========================//tested
+
+download and install winscp from official site 
+and create an another user from the AWS IAM rules set and Genterate username and password for command line access that willl give you acccess id and secreat key (permitons to the user for S3 bucet is munst be enabled either group level or user level)
+open winscp -> new session -> amazon s3 
+that will connect to the s3 bucket  
+(all users can acces the root aws s3 bucket)
+443 port is enable and create a new user for that
+
+-> s3 will allows versioning 
+publi acces
+static website
+block accss
+
+======================= USER DATA ===================================\\tested normal data
+#!/bin/bash
+/bin/echo "Hello World" >> /tmp/testfile.txt
+=============================================================================
+
+@#$ DONT use port number after DNS/IP address for this and that was must be HTTP and port is 80 
+
+ubuntu
+-----------------------------//tested 
+#!/bin/bash
+sudo su -
+apt-get update -y
+apt-get upgrade -y
+apt-get install apache2 -y
+service apache2 start
+systemctl enable apache2
+echo "cat" >> /var/www/html/index.html
+
+
+redhat/amazon image #wait for 10 min to update
+------------------------------------------------------------------------//tested 
+#!/bin/bash
+# Use this for your user data (script from top to bottom)
+#install httpd (Linux 2 version)
+sudo su -
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1>Hello World from </h1>" > /var/www/html/index.html
+
+
+===============OR==================== --tested
+
+#!/bin/bash
+sudo su -
+yum update -y
+yum install -y httpd.x86_64
+systemctl start httpd.service
+systemctl enable httpd.service
+echo “Hello World from $(hostname -f)” > /var/www/html/index.html
+
+
+==========================code for java RHEL/AMAZON LINUX================\\tested
+##Login as a root user
+sudo su -
+##Change dir to /opt 
+cd /opt
+yum install wget -y
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+yum install jdk-8u131-linux-x64.rpm -y
+java -version
+
+#yum install java -y # non SE env and Java c also not download
+
+===============code for TOMCAT install ============================================
+Just installing apache tomacat in server 
+############**********80 is default port for httpd and 8080 is ment for tomcat
+
+====code for tomcat Redhat/amazon linux==============//tested 
+#tomcat needs java to run 
+#!/bin/bash
+sudo yum install java-1.8.0-openjdk-devel -y
+cd /opt
+sudo yum install wget -y
+sudo wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.72/bin/apache-tomcat-8.5.72.tar.gz
+sudo tar -xvzf apache-tomcat-8.5.72.tar.gz
+sudo mv apache-tomcat-8.5.72 tomcat8
+sudo chmod 777 -R tomcat8
+cd /opt/tomcat8
+./bin/startup.sh
+
+=====ubuntu====================================
+#!/bin/bash
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt install openjdk-8-jdk openjdk-8-jre -y
+cd /opt
+sudo apt-get install wget -y
+sudo wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.72/bin/apache-tomcat-8.5.72.tar.gz
+sudo tar -xvzf apache-tomcat-8.5.72.tar.gz
+sudo mv apache-tomcat-8.5.72 tomcat8
+sudo chmod 777 -R tomcat8
+cd /opt/tomcat8
+./bin/startup.sh
+
+
+================================filezilla to EC2===================== //tested for redhat /ubuntu
+download and installl filezilla on pc
+copy DNS name from ec2 
+on filezilla -> site manager -> create new session -> SFTP -> KEY file
+give DNS name of EC2 instance and browse ".PEM" file and then connect
+
+
+==============================Load Balencing and target group======
+create target group along with Load balnecer
+must be all instances,target group and loadbalncers wil allow the traffic through port 80 in security group
+traffic flow
+pc ->DNS server -> listener -> load balncer-> target group(EC2)
+
+
+=================================Auto scalling ========================
+->it focus on health checks for both EC2 and ELB
+->based on evets/time interval the instaces will be scalled 
+-> mainly focus cloud watch on auto scalling based on some matrics the cloud watch will trigger
+
+auto scalling will done in two ways 
+1)Golder Image
+2)Launch temlate  -->> yoou can swith b/w these two 
+
+-> first create a GOLDEN image from existing image and run script as shown
+#there 
+#!/bin/bash
+sudo chmod 777 -R /opt/tomcat8
+cd /opt/tomcat8
+./bin/startup.sh
+
+
+
+=======================VPC===============================
+
+CIDR -> Classes Inter Domain Routing
+VPC - > here the ip range is Defined from /16 to /24 by default its from 10.0.0.0/16 which means (2)power 16 IPS 
+SUBNETS ->subnets are two types Public and Private subnets 
+	Private-> it will accessible only with in the NW not accessible from outside world
+	Public -> public IPs can accessible from both inside and outside 
+
+	* If you select IP 
+IGW - internet gateway is mandatory to defined from Subnets to Routing tables
+
+
+IP's and Ranges
+---------------
+/29 8 IPS
+/28 16 IPS
+/27 32 IPS
+/26 64 IPS
+/25 128 IPs
+/24 256 IP’S
+/23 512 IP’S
+/22 1,024 IPs
+/21 2,048 IPs
+/20 4,096 IPS
+/19 8,192 IPS
+/18 16,384 IPs
+/17 32,768 IPS
+/16 65,536 IPs
+/15 131,072 IPS
+
+
+======================VPC==========================================/tested 
+create a VPC with an IP Range 10.0.0.0/16 (it will give you 65k ips)
+create a subnets from different avaliblety zones 
+	the ip range is 
+		10.0.0.0/24   ---->* it will cover all 256 hosts in host portion
+		10.0.1.0/25  ---->* it will only cover 128 hosts in host section
+		10.0.1.128/25  --->* remaing hosts in 1's group also got selected 
+	By default it will take 5 hosts for default usage by AWS
+
+->create IGW stands for internet Gateway inn Gate way section
+	* and select gateway -> Action -> and ATTACH to VPC
+-> create a Route table with VPC 
+	->*select RT -> ROutes -> 0.0.0.0/0 igw-GATE_WAY_ADDRESS_
+	->*select route table -> subnet association -> and select subnet that you want to make publickly Assible
+->IN vpc enable DNS HOSTAME
+->In subnets -> select sunet and enable auto assign IP address
+
+				 - Subnet create/ associate
+	Route Table |- IGW also added while create it
+				 -Vpc create and add to route
+
+
+
+
+
+============connect private instance througn public nstance ====//tested
+
+-> connect public instance through terminal
+-> copy .pem file from windows to terminal environmnet 
+-> change permition to 0500
+-> ssh -i "sreekey.pem" ec2-user@10.0.0.111 (this is private ip instance)
+
+user->IGW->RT->IP->EC2(public)---->EC2(Private)
+
+points 
+-===-===============
+Ec2 and ebs are should be on same region 
+
+q's
+================
+Elastic ip assigning and disassign
+incerese storage capacity
+EBS snap chat and ec2 snap and create a volue in ther region
+mount additional volume 
+copy snapchat
+check /home/sreehari/.ssh/ folder 
+
+
+
+
+
+
+==========================================================================
+				code for LINUX
+==========================================================================
+FTP tools
+	Winscp
+	Filezilla
+
+chars of linux
+----------------
+case sensitive,muti user,multi perpose os
+
+
+three types of users
+ROOT
+NOrmal -non root users
+SYstem-jenkins
+
+
+
+directory strecture
+home- users data
+Bin-binary files like commands 
+Sbin- root commads like install and reboot
+temp - temp directory
+opt-installed packages
+dev - devices like priners and HDDs
+proc - process information $cpuinfo
+var - some installation adn hosting files
+etc - config files 
+/-root directory
+
+
+
+
+
+commands
+----------
+mkdir -p worls/animals/ocean/fish/eggs ->if directory is not present it will create it automatically
+mkdir -v cat -> it will give verbose acnowledge
+mkdir -m 0700 cat -> create a directory with 700 permitions
+ls -li -> will give i node information 
+INODE is a id which will give informaton regarding to the file
+
+*yum update tree
+*yum install/remove tree
+ls -lh -> it will display size in KB format
+
+
+
+cd ~ for home directory for current user 
+cd / for root
+cd ../.. from two directories backwards
+rm -rf cat/   --> all files in cat directory will deleted
+rm -f cat.txt -? only single file will be deleted
+rmdir cat/
+
+
+find . -type f -empty                --for empty files from current directory
+
+find . -type d -empty                --for emppty directorys
+
+find ~ -name cat.txt				-- from user directory
+
+
+umask for root 		  - 0022 for file 644 for dir 755
+		  normal user - 0002 for file 664 for dir 775
+*****umash also helps to change the user file permitions while creating it
+
+permitions
+---------------------
+ 7      7      7
+ rwx   rwx    rwx
+ user group others
+
+
+ chown -R dire/ -recoversively change permitions to all directories inside it
+
+ chmod rwxrwxrwx sree.txt
+
+ usermod -G root redhat
+
+ chown ec2-user:ec2-user directory/  -it will change username and direectory same at the same time 
+
+wc -l 	word counts
+wc -c
+wc -w   
+
+LINKS
+
+sudo ln cat.txt /tmp/cat.txt -- create a hard link (copy of file and update every time automatically with source file)
+sudo ln -s cat.txt /tmp/cat2.txt -- create a soft link (its just a shortcut)
+
+:se nu
+:se nonu
+:wq
+:q
+/search
+
+head -n 20 cat.txt
+tail -f cat.txt -->> continuous file changes last 10 lines wwill be displayed *******************
+
+sed -stream editor
+sed -n '100p' cat.txt
+sed -n '100,110p' cat.txt
+
+sed 's/red/blue/g' cat.txt  ----all red changed to blue
+sed 's/red/blue/1' cat.txt --only first word i every line was changed
+
+
+
+more cat.txt -> it will display the all data based on pages 
+less cat.txt -> works as same as it is
+
+sort cat.txt
+sort -r cat.txt
+
+
+Grep -global regular expression print
+grep sree cat.txt
+
+w -- command will give more info about who is logged inn it
+w = who + uptime ****
+
+
+users --all users
+whoami -- root
+whereis ls  ----it will display where the ls command is located
+
+
+
+df -h
+du sreefolder/ -- disk usage
+hostname -- it will display DNS Name
+hostname -i -- dns ip address
+
+
+
+================================service systemctl==========================================
+***************service /systemctl "enable" means the sevice is automatically active when the system is ON
+***************service /systemctl "disable" means the service is not active when it is reboot
+
+
+
+==ubuntu==
+service service-name options(start/stop/reboot/status)
+service sshd strat
+service --status-all
+
+==for RHEL==
+systemctl options(start/stop/reboot/status/enable) service
+systemctl start sshd
+systemctl list-unit-files
+
+
+process ids
+------------------
+
+ps -- it will display process
+ps -ef |grep sshd 
+kill -9 PID			-- "-9" is ment for killing the process
+process IDS change every time 
+
+**DOCKER could't work on RHEL
+
+
+=======================extraction===========================
+sudo yum install zip unzip tar -y
+#for ziping
+zip -r sree.zip devops/      --- it will make devops flder as sree.zip
+unzip sree.zip -d /tmp/      ---- unzip in tmp directory (by default is in same directory)
+tar -cvf sree.tar devops/   ---- crearte sree.tar from devops folder
+tar -xvf sree.tar 		 	---- for extracting tar files
+
+sudo tar -xvzf apache-tomcat-8.5.72.tar.gz
+
+once the user creared 
+useradd sreehari
+passwd sreehari
+su sreehari                 ---switch to usesr
+sudo su - sreehari          -- change user without password
+sudo userdel -r sreehari
+usermod -g root sree
+
+	create a directory in home 
+	crate a group name
+	create a entry in shadow file
+	create a entry in passwrod file
+
+password is stored in shadow file
+
+sudo su -  --> here already it have a super user privilages so we have to switch bw them 
+su - --->it switches to root so it requires pass
+
+
+
+=====================================================================================================
+						SCRITING
+=====================================================================================================//redhat
+read.sh
+----------------
+#!/bin/bash
+echo "enter some elements"
+read ELE
+echo "elements are" : $ELE
+
+
+read.sh
+----------------
+#!/bin/bash
+echo "enter some elements"
+read -a ELE 						#defining array 
+echo "elements are" : ${ELE[*]}
+echo "third element are" : ${ELE[2]}
+
+
+read.sh
+----------------
+#!/bin/bash
+declare -a ELE 						#defining array 
+ELE[0] = apple0
+ELE[0] = apple1
+ELE[0] = apple2
+echo "elements are" : ${ELE[*]}
+
+
+read.sh
+----------------
+echo "eneter somthing"
+read
+echo "elements are" : $REPLY
+
+
+
+read.sh
+----------------
+read -p "enter name :" Name
+read -sp "enter pass :" Pass
+echo $Name
+echo $pass
+
+redirectional operators
+------------------------
+ls > cat.txt ---override existing data
+ls >> cat.tst -- apend the data
+cat < cat.txt -- inputiing the data
+
+
+file discriptios 
+------------------------
+0 - standard input 
+1 - standard output 
+2 - standatd error
+
+sh hallo.sh 2>error.log 1>outut.log
+sh hallo.sh > errout.log 2>&1
+
+
+
+if [ condition ]             ##spaces are important
+then
+----
+else
+---
+fi
+
+
+EX
+--------------
+a=12
+b=34
+if [ a -gt b ]
+then
+        echo "a"
+else
+        echo "b"
+fi
+
+
+EX
+--------------
+echo "enter file naem"
+read filename
+if [ -f $filename ]
+then
+echo "yes"
+echo 
+else
+echo "no"
+fi
+
+
+EX
+--------------
+read filee
+if [ -f $filee ]
+then
+        echo "y"
+        cat $filee
+else
+        echo "n"
+        echo "creating.."
+        touch $filee
+fi
+
+
+
+
+
+
+
+
+For statement		***************************for Running for loops you must use "bash filename.sh"
+----------------------------------
+
+for (initi;condition;inc /dec)
+do
+---
+---
+---
+done
+
+
+EX   "bash filename.sh" not sh
+--------------
+#!/bin/bash
+for (( c=1; c<=5; c++ ))
+do
+   echo "Welcome $c times"
+done
+
+
+
+
+EX for while
+--------------
+i=1
+while [ $i -le 23 ]
+do
+echo "$i"
+i=`expr $i + 1`
+done
+
+
+switch case ex
+-------------------
+echo "enter number"
+read num
+case $num in
+
+1) echo "one"
+	;;
+
+2) echo "two"
+	;;
+*) echo "all"
+	;;
+esac
+
+
+
+functions.sh
+---------------------
+echo "fu"
+
+funs()
+{
+        echo "fun"
+}
+
+echo "fun ed "
+
+funs
+
+
+function import from another file                                *********************
+-----------------------------------
+source ./function.sh
+funs()
+
+
+
+=========================================================
+			GITHUB -microsoft
+========================================================
+https://git-scm.com/downloads
+
+SCM - source code management -github
+
+create a users
+-> go and create a account directly
+create a organization
+-> on right side top -> Plus (+) button -> there create a organization
+create group
+->select Team tab -> and create a team
+add users to group 
+->on left side you wll see add option for users to add
+give permitions to users
+->select the appropriate role and click -> and change he role to Maintainer (admin)
+create a reository unser the organization
+-> create reo and select organination as parrent
+
+
+---------------------------------------------
+Repos
+-> install git SCM
+and 
+cd Desktop/
+mkdir ama
+touch cat.java dog.java rabbit.java
+git init             ------> it will initiate a empty local repo in local system as (.git)
+
+
+====================add username and password ===============
+  git config --global user.email "hari.farheen@gmail.com"
+  git config --global user.name "farneen143"
+  git config --global --list
+
+Red color				Green 			
+Working area 		 Staring area 		           Local reosito 						Remote repo
+-------------		 ------------		          -------------							------------
+files --> git add *  [files moved] -> git commit * -> [files]   -------------> git remote add aliass https://github.com/sreedeveng/amazonrepo.git
+											git push aliass <branchname>
+											git push aliass master
+						 git commit -m "comments here" cat.java
+
+
+.gitignore
+ .proect 	------>these files are not moved to remote repo because its ignored by git
+ /content
+
+
+
+for finding aliass
+--------------------
+git remote -v --> all aliass
+git log ---> will helps to display log files{commit id and message}
+git show <commitID> it will disply log of a particular commit ID
+git commit -a -m "" file.txt  --> it will move working area to local repo directly when the file is previously moved 
+git reset  ---->it will all files from staring area to working area  (reverse oder)
+git reset file.txt only move one file from staring area to working area
+git revert <commitID> -> files and cotent will delete when after they are pull
+git push am1 master -f    ---> fourcefully move the content from local to remote repo
+git branch --> for displaying how many branches are in there 
+git branch development ---> crate a development branch in same repo
+git chckouot development ---> it will move the pointint to development branch 
+git diff  dev->it will tell the diff bw master and dev branch 
+git merge master->it will merge master and dev branch 
+git push am1 --all ->it will push all brancs to remote repo
+git branch -d dev -->delete
+git branch -r --> remote branch
+git branch -a  -->all branches
+git merge dev ----> it will merge dev with master
+git tag amazon1.0.0 --> tag will make all code as ZIP/TAR file for branches 
+git push am1 --tag --> it will ppush tags to remote repo
+git tag -d amazon1.0.0 --> it will delete th tag
+git checkout master --> for changeing master
+git stash --> for making backup the code
+git stash list -->display all bckups
+git stash apply stash{0} --> retrive backup /by default its last backup will takes place
+git stash drop --> it wwilldelte the shash data 
+
+ssh-keygen   -->".ssh/" folder save public key to gith acount 
+git remote add sree git@github.com:sreedeveng/amazonrepo.git
+git -T git@github.com     -->auth with public key
+
+git clone --> it will clone/download etire repo
+git pull --> it will update any changes happed in downloaded/cloned code 
+
+for checking which area the files are go with "$git status"
+
+version 1.2.0
+1-maximun version
+2-minimum version releases
+0-patch
+
+HTTP service codes
+-----------------------
+400 --client error
+400-bad reqest
+401- un auth
+404 -not found
+500 --server errors
+500 - internal server error
+502-bad gateway
+
+
+================================================================================
+					Maven--BUID tool
+================================================================================
+
+maven is a opensource and developed by apache
+its not a executiable aplication
+must Install java in order to run this
+
+standalone application (jar files-java archive)
+web app (War-web archive)-- web content +jar
+Enterprise app (Ear enterprise archive)-web+EAR+jar
+
+{open mvn directory bin folder and run commands}
+mvn -version -->tells version
+
+by default Maven has pom.xml but you hacce to change by using
+mvn -f flip.xml package
+
+xml -extesible markup language
+html - hypertext markup language
+
+
+<--
+commants in xml
+-->
+
+commands
+------------------
+mvn clean --> it will delete previous build rocess
+mvn site --> for making documents
+mvn validate -> validate code
+mvn compile --> compile source code
+mvn install --> it will store build artifacts in local repo
+mvn deploy -->it will store artifacts/package in remote repo
+mvn package --> for create package
+
+
+
+bin--all binaryy files like "mvn"
+conf -- setings.xml
+lib  --all jar files 
+
+https://maven.apache.org/download.cgi
+https://dlcdn.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.zip
+
+
+
+##code for Java IN RPM
+
+##Login as a root user
+sudo su -
+
+##Change dir to /opt 
+cd /opt
+yum install wget -y
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+yum install jdk-8u131-linux-x64.rpm -y
+
+java -version
+
+code for Maven
+------------------
+# reference   https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin/3.0.2
+Step1) Login as a root user and change the directory to /opt/
+
+sudo su -
+cd /opt/
+
+Step2) Download the Maven Software
+yum install wget unzip -y
+wget https://dlcdn.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.zip
+unzip apache-maven-3.8.3-bin.zip
+
+Step3) Set the class path/Environmental Variable
+
+For Specific User
+----------------------
+vi ~/.bash_profile
+
+->paste the two lines at last of the code .bash_profile
+
+export M2_HOME=/opt/apache-maven-3.8.3-bin
+export PATH=$PATH:$M2_HOME/bin
+
+
+->Run this
+source ~/.bash_profile
+
+For All Users
+---------------------- 
+vi /etc/profile
+
+->paste the two lines at last of the code .bash_profile
+
+export M2_HOME=/opt/apache-maven-3.8.3-bin
+export PATH=$PATH:$M2_HOME/bin
+
+->Run this
+
+source /etc/profile
+
+Step4) Check the Maven version
+
+mvn -version
+
+
+============================================================
+maven simple way 
+=================
+yum install maven #--> it will download and install package 
+
+find / -name maven #--> find the maven directories ususally this "/etc/maven/settings.xml"
+
+#/etc/maven
+#/usr/share/java/maven
+#/usr/share/maven-poms/maven
+#/usr/share/maven
+
+
+######For nexus in maven settings
+    <server>
+      <id>deploymentRepo</id>
+      <username>repouser</username>
+      <password>repopwd</password>
+    </server>
+
+
+============================================================
+		Tomcat - applicatio deployment server
+============================================================
+
+
+developed by apache
+must install Java
+apt install openjdk-11-jre-headless   ----->ubuntu
+
+directory 
+---------
+bin 	catalina.sh/bat
+	startup.sh/bat
+	shutdown.sh/bat
+	version.sh/bat
+
+conf 	server.xml
+	tomcat-user.xml
+
+logs	catalina.out
+
+lib 	all jar files
+
+webaps 	Directory for storing jar/war files
+
+tmp 	Temperary files
+
+
+Installation ubuntu
+-----------------------
+sudo su -
+apt-get install wget unzip -y
+cd /opt
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/src/apache-tomcat-9.0.54-src.zip
+unzip apache-tomcat-9.0.54-src.zip
+cd /opt/apache-tomcat-9.0.54-src/bin
+chmod u+x *.sh
+
+
+installation in redhat
+-----------------------
+sudo su -
+cd /opt
+sudo yum install wget -y
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/src/apache-tomcat-9.0.54-src.zip
+yum install unzip -y
+unzip apache-tomcat-9.0.54-src.zip
+cd /opt/apache-tomcat-9.0.54-src/bin
+chmod u+x *.sh
+***************
+shotcut making
+-------------------
+ln -s /opt/apache-tomcat-9.0.54-src/bin/startup.sh /usr/bin/startTomcat
+sh startTomcat
+
+
+https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/bin/apache-tomcat-9.0.54.zip
+
+
+For accessing tomcat from outside cmmint out these two lines
+----------------------------------------------------------- 
+/opt/apache-tomcat-9.0.54/webapps/manager/META-INF/context.xml       -->formanager
+<!--
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"     ---->these code will allows to outside traffic
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+
+/opt/apache-tomcat-9.0.54/webapps/host-manager/META-INF/context.xml	--->->for host manager
+<!--
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"     ---->these code will allows to allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+
+for username and password use this in tomcat
+------------------------------------------
+   <user username="admin" password="admin" roles="manager-gui,admin-gui,manager-script"/>
+			----? copy this at /config/tomcat-user.xml (after the comments) 
+
+
+changing port 
+----------------
+:se nu
+on line number 69 change port to 9980 in server.xml
+/conf/servver.xml
+
+
+** ctrl+shift+delete for cache delete
+
+=============War deploy======================
+build war file and deploy after connectiong
+http://192.168.209.1:9980
+and there is a option called "WAR file to Deploy"
+browse and deploy and open it onn url specified
+http://192.168.209.1:9980/helloworld/  -->context path
+for remmoving click undeploy
+reload -- when you change the content in the alication
+=============War deploy with diff cotext path==================
+under Deployment session 
+context path "/sreehari"   ----> must include "/" otherwise it wont work
+and give the path manually (it works on linux so)
+first move war to /tm dirctory 
+
+context path "/sreehari"
+war path /tmp/samle.war
+
+war -- static content
+aplication server -- dynamic content
+
+must install applications  in /opt/ directory
+
+
+
+installation of httpd service ============
+yum install httpd -y
+/var/www/index.html
+chmod 0777 cat.html
+/var/www/cat.html
+
+
+etc/httd/conf/httpd.conf   ----> for changing default serring like port and path
+
+
+
+===========================================================================================================
+						Sonar Coube -- code quality analyzer/monitor
+==========================================================================================================
+it developed by sonar
+not executable file
+H2 is default dadatabase for sonar qube
+java is required Leatest
+require 2 gb for sonal +2 gb for os =4GB t2.medium
+
+report will catagories into three types 
+---------------------
+vulnarabilities
+bugs
+code smells
+
+
+Default http://IP:9000
+User: admin
+Password: admin
+*******sonar cude will not run in root user
+sudo su - 
+cd /opt/
+sudo useradd sonar
+
+under the rood add this visudo
+sonar	ALL=(ALL)       NOPASSWD: ALL
+
+change owner 
+chown -R sonar:sonar sonar sonarqube-7.8
+
+
+
+
+change pom.xml file with sonarcube details 
+
+mvn sonar:sonar
+
+
+project -->detailed overview of maven project
+rules -> by defult it will validate with default rules 
+quality profiels = collection of rules 
+			here uou can create profiles for 
+			add rules
+			set as defult
+quality gate =		here you can set code coverage 
+			by defult its 80%
+administrator		-> security -> create a token 
+			replace username and password as token
+
+			also you can create users
+
+######code for Sonarqube
+
+Projects	--list of all projecsts
+Issues		-- code issues
+Rules 		--rules regarig to code validation
+Quality Profiles	-create qality rofiles 
+Quality Gates 	- allowed code
+Administration
+
+
+#Login as a root user.	
+sudo su -
+
+#Download the SonarqQube Server software.
+cd /opt
+yum install wget unzip -y
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
+unzip sonarqube-7.8.zip
+
+https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.1.0.47736.zip
+#As a good security practice, SonarQuber Server is not advised to run sonar service as a root user, so create a new user called nexus and grant sudo access to manage nexus services as follows.
+
+useradd sonar
+
+Give the sudo access to sonar user
+
+visudo
+
+sonar   ALL=(ALL)       NOPASSWD: ALL
+
+Change the owner and group permissions to /opt/sonarqube-7.8/ directory.
+chown -R sonar:sonar /opt/sonarqube-7.8/
+chmod -R 775 /opt/sonarqube-7.8/
+su - sonar
+cd /opt/sonarqube-7.8/bin/linux-x86-64/
+
+./sonar.sh start
+
+Troubleshooting
+--------------------
+
+sonar service is not starting?
+
+a)make sure you need to change the ownership and group to /opt/sonarqube-7.6/ directory for sonar user.
+b)make sure you are trying to start sonar service with sonar user.
+c)check java is installed or not using java -version command.
+d)delete /opt/sonarcube7.8/tmp/  ---for trubleshot
+Unable to access SonarQube server URL in browser?
+
+a)make sure port 9000 is opened in security groups - AWS ec2 instance.
+
+Create SonarQube server as a sonar service
+--------------------------------------------------------
+
+ln /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh /etc/init.d/sonar
+
+
+vi /etc/init.d/sonar
+
+#add below lines in /etc/init.d/sonar   after "PIDDIR=""" @@@
+
+SONAR_HOME=/opt/sonarqube-7.8
+PLATFORM=linux-x86-64
+
+WRAPPER_CMD="${SONAR_HOME}/bin/${PLATFORM}/wrapper"
+WRAPPER_CONF="${SONAR_HOME}/conf/wrapper.conf"
+PIDDIR="/opt/sonarqube-7.8/"
+
+
+systemctl daemon-reload #############must run this
+
+#Enable the sonar service
+sudo systemctl enable sonar
+
+#Start the sonar service
+sudo systemctl start sonar
+
+#Check the status of the  sonar service
+sudo systemctl status sonar
+
+sh /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh
+
+
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>5.1.2.RELEASE</spring.version>
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<sonar.host.url>http://18.220.241.172:9000/</sonar.host.url>
+	<!--    <sonar.login>c18f2e7ccc564550ac0493e561473fb9be2d223f</sonar.login> -->
+                <sonar.login>admin</sonar.login>
+		<sonar.password>admin</sonar.password>  
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+
+mvn sonar:sonar
+plugin name goal name
+
+
+
+##code for sonar -2
+===============================
+sudo su -
+cd /opt
+yum install wget -y
+yum install unzip -y
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+yum install jdk-8u131-linux-x64.rpm -y
+java -version
+yum install maven -y
+cd /opt
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
+unzip sonarqube-7.8.zip
+useradd sonar
+chown -R sonar:sonar /opt/sonarqube-7.8/
+chmod -R 775 /opt/sonarqube-7.8/
+ln /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh /etc/init.d/sonar
+systemctl daemon-reload
+#Enable the sonar service
+sudo systemctl enable sonar
+#Start the sonar service
+sudo systemctl start sonar
+#Check the status of the  sonar service
+sudo systemctl status sonar
+sudo yum update -y
+
+visudo
+su - sonar
+cd /opt/sonarqube-7.8/bin/linux-x86-64/
+chown sonar /etc/init.d/sonar
+./sonar.sh start
+
+
+
+<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+<dependency>
+    <groupId>org.sonarsource.scanner.maven</groupId>
+    <artifactId>sonar-maven-plugin</artifactId>
+    <version>3.0.2</version>
+</dependency>
+
+
+
+c18f2e7ccc564550ac0493e561473fb9be2d223f ---- token
+==================================================================================================
+					Nexus - artifcatory repository for war,ear and jar,docker images 
+==================================================================================================
+for taing and retriving backups and its open source
+ ex:jfrog
+git-> we can store code
+nexus -> we can store packages
+
+
+java required 1.8
+requiremets 2 gb ram only for nexus and support all OS
+not installable applciation
+
+
+for running 
+bin ->
+	./nexus start
+http://IP:8081
+
+
+#############code for nexus
+Login as a root user
+sudo su -
+cd /opt
+yum install tar wget -y
+wget http://download.sonatype.com/nexus/3/nexus-3.15.2-01-unix.tar.gz
+tar -zxvf nexus-3.15.2-01-unix.tar.gz
+mv /opt/nexus-3.15.2-01 /opt/nexus
+
+#As a good security practice, Nexus is not advised to run nexus service as a root user, so create a new user called nexus and grant sudo access to manage nexus services as follows.
+ 
+useradd nexus
+
+#Give the sudo access to nexus user
+
+visudo
+nexus ALL=(ALL) NOPASSWD: ALL
+
+#Change the owner and group permissions to /opt/nexus and /opt/sonatype-work directories.
+
+chown -R nexus:nexus /opt/nexus
+chown -R nexus:nexus /opt/sonatype-work
+chmod -R 775 /opt/nexus
+chmod -R 775 /opt/sonatype-work
+
+#Open /opt/nexus/bin/nexus.rc file and  uncomment run_as_user parameter and set as nexus user.
+
+vi /opt/nexus/bin/nexus.rc
+run_as_user="nexus"
+
+#echo '#run_as_user="nexus"' > /opt/nexus/bin/nexus.rc
+
+#Create nexus as a service
+
+ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+
+#Switch as a nexus user and start the nexus service as follows.
+
+su - nexus
+
+#Enable the nexus services
+sudo systemctl enable nexus
+
+#Start the nexus service
+sudo systemctl start nexus
+sudo systemctl status nexus
+#Access the Nexus server from Laptop/Desktop browser.
+ 
+http://IPAddess/Hostname:8081/
+
+#Default Credentials
+User Name: admin
+Password: admin123
+
+Troubleshooting
+---------------------
+nexus service is not starting?
+
+a)make sure need to change the ownership and group to /opt/nexus and /opt/sonatype-work directories and permissions (775) for nexus user.
+b)make sure you are trying to start nexus service with nexus user.
+c)check java is installed or not using java -version command.
+d) check the nexus.log file which is availabe in  /opt/sonatype-work/nexus3/log  directory.
+
+Unable to access nexus URL?
+-------------------------------------
+a)make sure port 8081 is opened in security groups in AWS ec2 instance.
+
+
+change port and context path
+-------------------------------
+
+cd /opt/nexus/etc
+vi nexus-default.properties
+
+--> and change the two filesds
+
+application-port=9981
+nexus-context-path=/sree
+
+
+
+Migrating nexus with maven
+----------------------------------
+http://ec2-3-142-208-48.us-east-2.compute.amazonaws.com:9981/sree/repository/maven-release/
+http://ec2-3-142-208-48.us-east-2.compute.amazonaws.com:9981/sree/repository/maven-snapshots/
+**copy these two Urls into pom.xml inn maven file 
+** and save nexus username and password admin/admin123 in maven conf/settings.xml
+
+-------------------------------------#all ID's should be same
+pom.xml(in maven war file) ----> all dependencies are placed in pom.xml 
+---------------
+
+	<distributionManagement>
+
+	    <repository>
+	      <id>nexus</id>
+	      <name>sample Technologies Releases Nexus Repository</name>
+	      <url>http://ec2-3-142-208-48.us-east-2.compute.amazonaws.com:9981/sree/repository/maven-release/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>sample Snapshot Nexus Repository </name>
+	      <url>http://ec2-3-142-208-48.us-east-2.compute.amazonaws.com:9981/sree/repository/maven-snapshots/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
+
+
+
+## in line nuber 8 change to "<version>0.0.1-SNAPSHOT</version>"   #--> ment for snapshot
+## in line nuber 8 change to "<version>1.0</version>"   #--> ment for release
+settings.xml (in maven application)
+--------------------------------------
+
+######For nexus  on maven settigs.xml
+
+vi /etc/maven/settings.xml
+
+    <server>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+
+* Finally run this
+mvn clean deploy
+--> it will deploy the code to either snapshot or relese directory
+clean sonar:sonar build  --->for jun+mvn+sonar+git
+
+
+************difference bw snapchat and release======================
+<version>0.0.1-SNAPSHOT</version>  --->in this fied allows any number of uploades to nextus 
+<version>1.0</version>  ----> but here it only allow one copy (after that you neeed to cnage version here)
+			----> admin tab -> reosotiries-->hosted--> allow redeploy
+
+
+
+
+maven local repo
+	centeal repo
+	remore repo
+
+************* check pom.xml in master/dvelopmet node and snapchat and release url
+
+
+
+================================================================================================================
+jenins--continuous integration tool
+================================================================================================================
+it will integrate everything automate the build and testing
+automating a process is called cotinuous intigration
+-java required
+
+cotinuos delivery
+continuously deploymment
+code -test cases - intigrate - acceptance test - deploy to prodction
+
+
+jacococ -- best plugin for jenkis java code complile
+cloudbees jenkins  -- enterprise edition
+
+
+
+
+#code for jenkins
+java -version
+##---------------->>>        https://pkg.jenkins.io/redhat-stable/
+# jenkins contorller and junkins age (node)
+#these two lines will added to rem package repos
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum install jenkins -y --nobest
+
+systemctl enable jenkins
+
+systemctl start jenkins
+
+#--> it will open under the port is 8080
+http://IP:8080/
+
+# it will create a service called jenkins and user called jekins
+#/var/lib/jenkins  this is the home directory for junkins
+
+cat /var/lib/jenkins/secrets/initialAdminPassword  #------>copy the key and paste it was a first key (after that u need to update ) 
+
+nex son jen ans
+doc k8
+
+====***************************wait for 10 min to start jenkins sever to bootup
+
+
+
+
+sudo yum git -y
+add item --> name as "flipkart dev" -->select "git" and give url 
+https://github.com/farheen143/maven-web-application.git
+->username and passeord 
+hari.farheen@gmail.com
+supkalkir143
+
+
+under the branch "*/development"    ---> this is met for development 
+under the Build select "Invoke top-level Maven targets" --> because its maven project ->clean package
+and save and BUILD NOW
+
+if any error occur check the console outpput
+
+*******you can also install  maven inside the junkins also
+for that goto global conf -> selece maven and maven version 
+
+in jenkins you can install whatever the version you want
+
+
+--
+
+for sonarqube -
+run sonarqube server on othse ami and config url ,username and password in pom.xml file
+
+and execute
+clean package sonar:sonar
+
+
+
+Tomcat intigration
+deploy to conationer plugin needed so install this in jenkins
+
+
+Deploy war/ear to a container
+WAR/EAR files- name as  "**/maven-web-application.war"
+**/maven-web-application.war
+add credintials and URL
+http://3.144.163.69:9980/
+
+
+automating build process(build trigger)
+-------------------------
+pool SCM  ---> code updated automaticaly when changes ahappens in GIT
+	  * * * * *       min hour day mon month 
+	  started by scm
+
+
+
+build periodically --> code updated every minute
+	  * * * * *       min hour day mon month 
+	  started by scm change
+
+
+github webhook -->(check master and dev branch)
+		git ->maven project ->settings-->webhooks
+		http://junkinsIP:8080/github-webhook/
+		and select just the push
+
+options
+---------------------
+Discard old builds
+5 and 5 
+delete worksacw before start
+abdd time stamp
+
+
+install jacoco --> java coverage  80 80
+change build
+fail the build 
+
+/var/lib/jenkins/workspace/project/  #default directory for projects
+/var/lib/jenkins/tools  	     # for insatlling tools like maven
+/var/lib/jenkins/builds 	     #all builds are placed here
+/var/lib/jenkins/nextbuildnumber
+/var/lib/jenkins/confg.xml   -- <usesecurity>false</usesecurity> for default auth
+
+Task :: Run email verifiation
+
+
+For executing project maven project
+------------------------------------------
+Maven integration --> install this plugin
+
+only for java maven project
+select maven project --> build "clean package"
+
+
+plugins
+-------
+deploy to conatiner ->tomcat
+maven inntegraton
+saferestart
+	IP:8080/restart
+	IP:8080/saferestart
+nextbuildnumber
+	-it will just set next build number
+jacoco
+	-for code coverage
+sonarqube scaner
+	-for c projects
+audit trial
+	-everything is stored in a log file
+
+
+for adding external plugin
+ibm ucd --doenload this and plugins->advanced->browse  and upload
+
+jenkins port change 
+---------------------------
+/var/lib/jenkins/    #-> default home dir for jenkins
+vi /etc/sysconfig/jenkins		#-> configurations for jenkins port on 56th line
+
+**********systemctl restart jenkins
+
+this project is permaeterised
+---------------------------------
+name : allbranches
+choice:master
+	dev
+	development
+	testing
+
+
+under the branch : **/${allbranches}
+
+
+view create using + button
+and also delete 
+
+
+pipeline script ->groovy
+--------------------
+delete sonar,nexus,apache 
+
+/opt/apache/
+		chmod -R 0777 webapps 
+
+
+
+
+
+
+
+
+
+
+
+
+
+==========================================================
+code for jenkins pipeline script
+====================================================
+ node   //node("node1")
+ {
+ stage('CheckoutCode')
+  {
+ git credentialsId: '44f7aa89-f5d6-4652-8d07-252f53df8152', url: 'https://github.com/farheen143/maven-web-application.git'
+  }
+  stage('Build')
+ {
+  sh "mvn clean package"
+ }
+  stage('ExecuteSonarQubeReport')
+ {
+  sh "mvn sonar:sonar"
+ }
+ stage('UploadArtifactIntoNexus')
+ {
+  sh "mvn deploy"
+ }
+   stage('DeployToTomcat')
+ {
+  
+ sshagent(['efbc5898-810f-4ab1-99d0-6efaa015f520'])
+  {
+   sh  "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.137.213.142:/opt/tomcat8/webapps/maven-web-application.war"
+  }
+ }
+  stage('gmals')
+ {
+     emailext body: 'asdasdasdasdasdasdasd', subject: 'sree', to: 'aurora.g00gle1@gmail.com'
+ }
+ 
+  }
+
+
+
+
+  /*
+maven3.6.3--home directory
+CheckoutCode -- syntax for pipeline and select for "git" and generate code
+
+install ssh agent plugin in jenkins and it requires EC2 instance pem key and also
+chmod -R 777 webapps/  --->for tomcat
+
+*/
+
+ =========================================================2nd==========================================================================
+ node
+ {
+
+ stage('CheckoutCode')
+  {
+  git branch: 'master', credentialsId: '235e277e-7cf7-495e-b970-a22c2478d48c', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+  }
+ 
+
+ stage('Build')
+ {
+  sh "mvn clean package"
+ }
+
+  stage('ExecuteSonarQubeReport')
+ {
+  sh "mvn sonar:sonar"
+ }
+
+stage('UploadArtifactIntoNexus')
+ {
+  sh "mvn deploy"
+ }
+
+  stage('DeployToTomcat')
+ {
+  
+ sshagent(['c5312531-0dcb-492a-859b-f5c4f41dbe56'])
+  {
+   sh  "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.144.163.69:/opt/tomcat8/webapps/maven-web-application.war"
+  }
+  }
+  
+ stage('SendEmailNotification')
+ {
+emailext body: 'asdasdasdasdasdasdasd', subject: 'sree', to: 'aurora.g00gle1@gmail.com'
+ 
+ }
+
+ }
+ ============================================================3rd==============================================================================
+ node
+{
+ stage('CheckoutCode')
+  {
+ git credentialsId: '44f7aa89-f5d6-4652-8d07-252f53df8152', url: 'https://github.com/farheen143/maven-web-application.git'
+  }
+ 
+
+ stage('Build')
+ {
+  sh "${mvnHome}/bin/mvn clean package"
+ }
+
+ stage('ExecuteSonarQubeReport')
+ {
+  sh "${mvnHome}/bin/mvn sonar:sonar"
+ }
+
+
+ stage('UploadArtifactIntoNexus')
+ {
+  sh "mvn deploy"
+ }
+
+ 
+ stage('DeployToTomcat')
+ {
+  
+  sshagent(['bac46180-c907-4a95-b8a9-417aff7d4f5c'])
+  {
+    sh  "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.253.59:/opt/apache-tomcat-9.0.30/webapps/maven-web-application.war"
+  }
+ 
+  }
+ stage('SendEmailNotification')
+ {
+emailext body: 'asdasdasdasdasdasdasd', subject: 'sree', to: 'aurora.g00gle1@gmail.com'
+ 
+ }
+}
+
+/*
+maven3.6.3--home directory
+CheckoutCode -- syntax for pipeline and select for "git" and generate code
+
+install ssh agent plugin in jenkins and it requires EC2 instance pem key and also
+chmod -R 777 webapps/  --->for tomcat
+email extender
+
+*/=============================================================================================================================
+
+
+
+=======================
+master slave architecture
+mkdir node1
+chmod -R 777 node1/
+
+java install 
+in "manage node"
+name:node1
+remote dir :/home/ec2-user/node1/
+//lable name is same for all
+usage:Use this node as much as possible
+launch : launch against via ssh
+credintials : ssh username with private key
+key : manually trusted key
+
+
+in project on jenkings there is a option called restrict where this roject can be run
+and tye "node1"
+
+
+backups
+--------------
+thinBackup install this plugin 
+and this will visible in manage conf tab
+select settings and give backupdirector /var/lib/jenkens/backup
+********backup dir have full perms "chmod -R 0777 backup"
+
+
+======================================================================
+code for docker image 
+=======================
+docker pull httpd
+/usr/local/apache2/htdocs# cat index.html
+
+ In Amazon Linux
+-----------------------
+sudo yum update -y       
+sudo yum install docker -y
+sudo service docker start
+
+Add Regural user to dockergroup
+sudo usermod -aG docker  <username>
+
+ex:
+sudo usermod -aG docker ec2-user
+
+Once you add user to group exit from the server and login again.
+# Get docker information
+docker info
+
+#Install Docker in Linux (Works for most of linux flavors).
+sudo curl -fsSL get.docker.com | /bin/bash
+
+Docker Home Directory/Working Dir:
+/var/lib/docker
+
+
+
+dangling inage is which has no tag and repository
+officially docker isnot supported for Redhat so use Ubuntu
+image is a collection of layers "docker inspect centos"
+running images cat be deteded first stop and delete them
+
+To Un Install a docker
+-----------------------------
+Use below command to un-install docker
+#apt-get remove docker docker-engine docker.io -y
+
+
+
+sudo apt-get update
+sudo apt install docker.io -y
+sudo systemctl enable docker
+sudo systemctl start docker
+docker --version
+sudo usermod -aG docker $USER
+sudo usermod -aG docker ubuntu
+
+# ******** Exit From Current SSH Terminal & SSH(Login) again .Then execute
+docker ps
+
+
+commands
+--------------------
+
+
+docker images  ##dosplay list of images
+docker version  ## show info about docker 
+docker run -d -p 8080:8080 --name java dockerhandon/java-web-app
+	     external:internal port
+docker pull centos ## pull image form reo
+docker rmi -f centos ## removes image when it stops
+docker stop <name> #for stopping image
+
+docker system prune ##will delete stoped containers,dangling imanges and networks
+docker image prune # only delete docker iamge pune
+docker tag <imagename/id> <tagneme>
+
+docker run -it --name as ubuntu  #it will download and run image adn login as ubuntu 
+docker start -i ubuntu #for starting doloaded container and login
+
+docker stop imagename # will send signal to stop container
+docker restart imagename
+docker kill image name #will kill directly
+
+docker ps -q for stopped containers
+** docker log <container name> # it will give you container details adn commnads with log data
+
+docker stash <container name>	#will dislay resource utiliztion
+docker top <container name>   #will display running process inside the containers
+
+for exexcuting commnads in runningg cntainser
+-----------
+docker exec <container name> ls 
+
+run and create
+---------------
+docker run -d -p 8080:8080 --name java dockerhandon/java-we-app
+->it willl run a cotainer descreate mde menas no logs"-d" for that we use-d and external  port : internal port 
+-> it will create and run image at same time
+
+ docker create --name java dockerhandon/java-we-app
+-> it willonly create a image 
+
+docker ps -a # for all image states
+
+access
+----------------
+docker image can accessible only with host IP not with docker IP
+docker to docker communicationn hapens with host  IP 
+docker ps -a
+
+/var/lib/docker  #home directory for dockers
+
+
+coping docker from source to dest
+----------------------------------------
+source
+-----------
+docker save -o image.tar image-name
+and Scp tar sour dest
+
+dest
+-------
+docker load -i image.tar
+
+
+
+tomcat defult directry in docker
+usr/local/tomcat/webapps
+
+
+going inside to docker container
+--------------------
+docker exec -it <<container name>> /bin/bash
+or
+docker exec -it <<container name>> /bin/sh
+
+
+
+for copying files from docker to host viseversa
+------------------------------------
+doc to host
+docker cp ubuntu:/var/local/ca.txt ca.txt
+host to doc
+docker cp cat.txt as:/home/
+
+installtion of packages in docker 
+-------------------------------
+apt update -y
+apt install tree
+apt install vim -y
+
+build 
+----------------
+Docerfile   # here you can save the script on the same diectory
+
+
+docker build -t <docker name that you want to> <path>
+
+
+docker commit <id> <imagename>
+socker commit 00e000ed0d27 commitedimaeName 
+docker images
+
+
+docker search tomcat
+
+
+
+
+
+
+
+
+
+FROM —-> FROM indicates the image base image which we are using to build our own image.
+
+FROM tomcat:8.0.20—jre8
+
+FROM openjdk:8-alpine
+
+MAINTAINER ——> It's will be used as commnets to describe author/owner who is maintaning docker file.
+
+MAINTAINER MithunTech <devopstrainingblrggmail.com>
+
+COPY --> It will copy local files from host server(docker server)from where we are building image to the image while
+creating a image.
+
+COPY <sourceFile> <destination>
+
+COPY target/java—web-app.war /usr/local/tomcat/webapps/java-web-app.war
+
+ADD --> ADD also can copy files to the image while creating image. ADD can copy local files from host server and alsc
+
+it can download files from remote HTTP/S locations while creating a image.
+
+ADD <URL> <destination>
+
+ADD <source> <destination>
+
+Note: If it's tar file
+
+RUN —-> RUN instruncation will execute commands .RUN commands or instructions will be executed while creating
+an image. Next to run you can mention any command based on base image.
+
+RUN mkdir -p /opt/app
+
+RUN tar -xvzf /opt/apache—tomcat—8.5.54.tar.gz
+
+CMD ——> CMD instruncation will execute commands. CMD commands or instructions will be executed while creating
+a container.
+
+CMD java -jar springapplication.jar. # Shell Form
+
+CMD [”java", "—jar" , "springapplication.jar"] # Executable form
+
+What is difference b/w RUN & CMD?
+
+RUN instructions will be executed while creating a container. CMD Instructions will be executed while creating a
+
+container.We can have more than one RUN keyword in a docker file. All the RUN keywords will be processed while
+
+creating an image in the defined order(top to bottom).
+
+Can we have more than one CMD in dockerfile?
+
+Yes you can have. But only the last one/recent one in the order will be proccessed while creating a contid
+
+
+
+
+
+ENTRYPOINT -> ENTRYPOINT instruncation will execute commands. ENTRYPOINT commands or instructions will be executed
+while creating a container.
+h
+ENTRYPOINT java -jar springapplication.jar. # Shell Form
+ENTRYPOINT ["java", "—jar" , "springapplication.jar"] # Executable form
+What is the diffrence b/w CMD & ENTRYPOINT 7
+CMD command/instruction can be overridden while creating a container. ENTRYPOINT command/instruction can't be
+overridden while creating a container.
+Can we have both CMD & ENTRYPOINT in docker file?
+Yes we can have both in a docker file. CMD instructions will not be executed if we have both CMD & ENTRYPOINT.CMD
+instructions will be passed as an arguments for ENTRYPOINT.
+FOR Example:
+CMD ls
+ENTRYPOINT ["echo", "Hello“]
+IT Will be executed as below
+/bin/echo HELLO ls
+# Out Put
+Hello ls
+
+
+
+What is shell from and executable form in docker?
+RUN,CMD,ENTRYPOINT instructions/commands can be defined in shell form or executable form. When we use shell form
+our command will be runnings a child process under bash/sh(shell).
+shell Form
+
+CMD java —jar springapplication.jar.
+
+In Background above cmd will be executed as below.
+
+[bin/bash —c java ~jar springapplication.jar
+
+When we use exec form our command will be runing as main process.
+CMD [”java", "—jar" , "springapplication.jar"]
+
+/bin/java -jar springapplication.jar
+
+Note: When we use CMD , ENTRYPOINT exec form is prefarable.
+
+
+
+
+
+EXPOSE --> Expose indicates which port is opend/used in the image.
+EXPOSE <port>
+
+EXPOSE 8080
+
+ENV --> ENV is used to set an environmet variabels. These ENV varaibles will be available for image & container.
+ENV <NAME> <VALUE>
+
+EX
+
+ENV CATALINA_HOME /usr/local/tomcat
+
+ENV JAVA_HOME lusr/bin/jdk8
+
+USER —-> USER is used to set user for the container or image.
+
+USER <userName>
+
+ex
+==================================================
+FROM centos
+
+MAINTAINER devopstrainingblr@outlook.com k
+
+RUN mkdir /opt/tomcat/
+
+WORKDIR /opt/tomcat
+
+#RUN curl -O http://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.45/bin/apache—tomcat-8.5.45.tar.gz
+
+ADD http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.46/bin/apache-tomcat-8.5.46.tar.gz .
+
+RUN tar xvfz apache*.tar.gz
+
+RUN mv apache-tomcat-8.5.46/* /opt/tomcat/.
+
+RUN yum -y install java
+
+RUN java -version
+
+WORKDIR /opt/tomcat/webapps
+
+EXPOSE 8 0 8 0
+
+CMD ["lopt/tomcat/bin/catalina.sh", "run"]
+===============================================================
+
+$docker build -t docfile -f AnyOhterFileNamethatYouWanttogive .   #custome fle name
+
+
+
+Dockerfile
+--------------------
+FROM ubuntu
+RUN echo "Run One Updated"
+RUN echo "RUN TWO"
+CMD echo "Echo From Image"
+CMD echo "Echo From Latest"
+RUN echo "RUN Three"
+
+
+FROM ubuntu
+CMD ["echo" ,"FROM DockerFile"]
+ENTRYPOINT ["ls", "/"]
+
+
+
+
+$docker build -t docfile .
+$docker run docfile
+
+
+Best practice
+------------
+use alpinelinux because its small in size
+merge command that wants to execute because every line will make a layer
+uninstall not required files and installed apps
+
+
+
+
+docker networks
+---------------------------
+docker network create -d bridge sreeflip
+docker run -d -p 8080:8080 --name sree2 --network sreeflip dockerhandson/java-web-app ##only some of them are supported nw tag
+
+
+
+docker login: To sign into the Docker Hub.
+
+docker logout: To logout from the Docker Hub. If no server is specified, then the default is used.
+
+
+username :sreehari9951
+password :Supkalkir143
+
+
+=====================================================================================
+			code for jfrog -artifactory reository
+=======================================================================================
+just line nexus its an artifactory repository 
+by defaule port is 8081 and 8082
+** artifactory repo means it will take a backup of all updated code in to repo ,and every thing is in the form of unerstandalbel by the repo server itself
+
+requred plugin is "artifactory" or "artifactory plugin"
+
+yum install java-1.8* -y 
+cd /opt 
+wget https://jfrog.bintray.com/artifactory/jfrog-artifactory-oss-6.9.6.zip
+unzip jfrog-artifactory-oss-6.9.6.zip
+cd /opt/artifactory-oss-6.9.6/bin
+./artifactory.sh start
+
+
+===========================================================================================================================================
+===========================================================================================================================================
+================================================
+			Kubernats
+================================================
+Containers could not communicate with each other
+Containers had to be deployed appropriately
+Containers had to be managed carefully
+Auto scaling was not possible
+Distributing traffic was still challenging
+
+Kubernetes is an open-source Container Management tool which automates
+container deployment, container (de)scaling & container load balancing.
+
+- Written on Golang, it has a huge community because it was first
+developed by Google & later donated to CNCF
+
+- Can group ’n’ no of containers into one logical unit for managing
+& deploying them easily
+
+nerver need restart
+scalling 
+batch starting
+
+kubernets has GUI
+
+kubernet is container management tool
+
+
+proc id ns
+ ps -ed | grep dockerd
+which docker
+
+deteach mode -d
+
+commands
+---------------
+id -- displays all IDS
+ps -fu $Logname
+ps -ef
+/proc/process_id/ns
+
+docker client -> docker host(demon) [containers and images] -> registory(hub)
+
+docker -images - dockerfile - volume - registry -compose - swam
+
+which docker 
+
+docker version
+
+docker inspect <container name>
+docker run -d --name ngnix ngnix
+--> it will provice info about cintainers (rivvate ip also)
+and then 
+
+ docker logs nginx
+ docker exec -it ngnix bash
+
+/var/lib/mysql
+mount point
+
+
+
+docker run -v /data:/var/lib/mysql --name mysqldb -e MYSQL_ROOT_PASSWORD=root -d mysql
+
+-v -->attach volume
+/data - from host machine 
+/var/lib/mysql is home directory for SQL
+-e stands for envorement varible
+
+
+Pre-requisites To Install Kubernetes 
+Since we are dealing with VMs, we recommend the following settings for the VMs:-
+
+Master:
+
+2 GB RAM
+2 Cores of CPU
+Slave/ Node:
+
+1 GB RAM
+1 Core of CPU
+
+##********************** https://www.edureka.co/blog/install-kubernetes-on-ubuntu
+
+
+
+
+
+gmail for ubuntu
+
+
+aurora.g00gle1@gmail.com
+sreeharifarheen
+Google@1234
+
+At both Master & Slave							Only master					Only on Slave
+-----------------------------------------------------------------------------------------------------------------------
+Update Your Repository						Initiate Kubernetes Cluster		Join the cluster
+Turn Off Swap spaces						Install the Pod Network
+update Hostname, Hosts and set Static IP 	Setup the Kubernetes Dashboard
+Install OpenSSH Server and Docker
+Install Kubeadm, Kubelet and Kubectl
+
+code for kubernets
+=========================
+
+$ sudo su
+# apt-get update
+
+# swapoff -a
+# nano /etc/fstab
+	#/swapfile ---in here(last line)
+# nano /etc/hostname							#in node also change as "Knode"
+		change name to kmaster
+
+//installation od network pod
+$ kubectl apply -f https://docs.projectcalico.org/v3.0/getting-started/kubernetes/installation/hosted/kubeadm/1.7/calico.yaml
+
+$ kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+
+$ kubectl get pods -o wide --all-namespaces
+
+$ kubectl proxy
+
+
+///////////////////Only Kubernetes Node VM (knode)
+							##change ip here
+sudo su
+sudo kubeadm join --apiserver-advertise-address=<ip-address-of-the master> --pod-network-cidr=192.168.0.0/16
+
+kubectl apply -f 
+
+
+commands for both master and worker nodes https://www.fosstechnix.com/how-to-install-kubernetes-cluster-on-ubuntu/
+=====================================================
+##// swapoff -a //for pc only
+sudo su 
+
+sudo apt-get update
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update -y
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+
+cat <<EOF | sudo tee /etc/docker/daemon.json
+{
+"exec-opts": ["native.cgroupdriver=systemd"],
+"log-driver": "json-file",
+"log-opts": {
+"max-size": "100m"
+},
+"storage-driver": "overlay2"
+}
+EOF
+
+
+sudo systemctl enable docker.service
+
+sudo systemctl daemon-reload
+
+sudo systemctl restart docker
+
+sudo apt-get update
+
+sudo apt-get install -y apt-transport-https ca-certificates curl
+
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+
+sudo apt-get install -y kubelet kubeadm kubectl
+
+sudo apt-mark hold kubelet kubeadm kubectl
+
+=================================ONLY FOR MASTER ===========================================
+
+sudo kubeadm init --pod-network-cidr 10.0.0.0/16
+
+rm /root/.kube/config
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+kubectl get nodes
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+kubectl get nodes
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
+
+
+kubectl create serviceaccount dashboard -n default
+
+kubectl create clusterrolebinding dashboard-admin -n default --clusterrole=cluster-admin --serviceaccount=default:dashboard
+
+
+kubectl get secret $(kubectl get serviceaccount dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
+
+kubectl proxy
+
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.
+
+
+==================================FOR WORERS=====================================
+
+****************** RUN AS SUDO
+
+
+##kubeadm join 192.168.21.132:6443 --token 6pt9lj.q2zfnscctyc3rfs5 \
+    --discovery-token-ca-cert-hash sha256:3e0b2b3245a3572aec80d65bc3d9c3ac33d698646531cc77fb251d89537e598f
+
+
+//run on master
+
+kubectl label node ip-172-31-30-187 node-role.kubernetes.io/worker=worker
+					node ip (slave)
+
+
+
+
+///at second time run//
+master #####sudo kubeadm init --pod-network-cidr 10.0.0.0/16
+knode  #####kubeadm reset
+kubeadm join 192.168.21.132:6443 --token wliqz6.ppugwmwdau1lws5d --discovery-token-ca-cert-hash sha256:29645bdfe682981ee0a53c868ab59981eb54b8032bef2126121a1f372351bbfd 
+
+
+//if in case proxy is not happen run 
+
+kubectl get pods -o wide --all-namespaces
+
+# run calico command
+===============================
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
+
+kubectl proxy
+
+http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+
+kubectl create serviceaccount dashboard -n default
+
+kubectl create clusterrolebinding dashboard-admin -n default --clusterrole=cluster-admin --serviceaccount=default:dashboard
+
+
+kubectl get secret $(kubectl get serviceaccount dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
+
+
+
+
+
+
+kubectl apply -f https://docs.projectcalico.org/v3.0/getting-started/kubernetes/installation/hosted/kubeadm/1.7/calico.yaml 
+
+
+kubectl_UI-->(Kube master(API-server)+control_manager+ETCD+kube schedular) --> Node1(kubelet,kubeproxy and container runtime engine)
+
+master node wait for only five minitutes to get respone from node ,and then leave it
+api server is a gateway 
+ETCD - HA , entire data is stored and backuped 
+kube sheduled - prioiryt
+                highest weight for pod exe
+
+    kubelet - hardbeat 
+                manages node
+
+kube-proxy                tcp udp signnal sending
+
+container engine--it support varity of applivarion one of it is Docker
+
+hardbeast is inclueds status-ip priveate memory cpu ,store cu,version of kubernets
+
+
+problems
+------------------
+Container-to-Container communication
+
+Pod-to-Pod communication
+    communicates bw various pods and different conatiner images
+Pod-to-Service communication
+
+
+External-to-Service communication
+
+
+
+
+
+Deploy.yml
+--------------------------------------------------------------------------------------------------
+apiVersion: apps/v1  #Defines the API Version
+kind: Deployment     #Kinds parameter defines which kind of file is it, over here it is Deployment
+metadata:
+  name: dep1        #Stores the name of the deployment
+spec:               # Under Specifications, you mention all the specifications for the deployment
+  replicas: 3       # Number of replicas would be 3
+  selector:
+   matchLabels:
+     app: httpd     #Label name which would be searched is httpd
+  template:
+    metadata:
+    labels:
+      app: httpd   #Template name would be httpd
+  spec:            # Under Specifications, you mention all the specifications for the containers
+   containers:
+   - name: httpd   #Name of the containers would be httpd
+     image: httpd:latest  #The image which has to be downloaded is httpd:latest
+     ports:
+     - containerPort: 80 #The application would be exposed on port 80
+
+
+
+
+
+
+==============================================                                                                                
+apiVersion: apps/v1  #Defines the API Version
+kind: Deployment     #Kinds parameter defines which kind of file is it, over here it is Deployment
+metadata:
+  name: dep1        #Stores the name of the deployment
+spec:               # Under Specifications, you mention all the specifications for the deployment
+  replicas: 3       # Number of replicas would be 3
+  selector:
+   matchLabels:
+     app: httpd     #Label name which would be searched is httpd
+  template:
+    metadata:
+    labels:
+      app: httpd   #Template name would be httpd
+  spec:            # Under Specifications, you mention all the specifications for the containers
+   containers:
+   - name: httpd   #Name of the containers would be httpd
+     image: httpd:latest  #The image which has to be downloaded is httpd:latest
+     ports:
+     - containerPort: 80 #The application would be exposed on port 80
+
+
+    ===============================================================
+
+
+
+
+
+
+/root/.kube/config ---->ddelete if any thig happens wrong in dashboard,502 certificates
+/usr/share/nginx/html  --nginx home directory
+
+
+
+
+
+
+
+/////////////////////////delete kubernetts//////////////////////
+
+kubectl delete deployment kubernetes-dashboard  --namespace=kubernetes-dashboard
+kubectl delete deployment dashboard-metrics-scraper --namespace=kubernetes-dashboard
+
+
+kubectl delete -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended.yaml
+kubectl delete clusterrolebinding dashboard-admin -n default 
+kubectl delete serviceaccount dashboard -n default
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6IjVNcHFXVlZjY05IQThRNy1sVno0a21CNUxoek9QXzZPRDhLRkZKQzFMY1EifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRhc2hib2FyZC10b2tlbi1taGJ3ZiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJkYXNoYm9hcmQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIwODQ3MmRhZi0zOTk3LTQ4MTQtODVhNC00Y2UzNTUwZmI1YWQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpkYXNoYm9hcmQifQ.OBQDO_ykxocuLXGwTcl2CDEuJlbfhwheqDJ3Sg2zGyxZYJ8O0OHdDg7BrQn6_yXD_kBe0nx9usRZULd0fsEb7_asudKdjheyMPGADlaW-7XHYa6J3BRyuvP4CIQ4gxlw_0jxXPGxAnFU-pvDb0QQA8QlRrY984_1topIC9pYTKmHZqrxu3VZQpENu55v8Txi2qUO8RyQSVpYJ5lpe3ea5bDmK8D_kxllENTgAsMWFOf-wrgR3Q6Skb34MJ6A3-4qgDsFSyMTVGugWXYsuI96lOrE_8kNjA5crjCOkTcpSc2gyUDTmFjMdrmSZZhB9URC0mM2PrP0_Jt6g01AMB0Xwg
+///
+kubectl get nodes
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
+
+
+kubectl create serviceaccount dashboard -n default
+
+kubectl create clusterrolebinding dashboard-admin -n default --clusterrole=cluster-admin --serviceaccount=default:dashboard
+
+
+kubectl get secret $(kubectl get serviceaccount dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
+
+kubectl proxy
+
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.
+
+
+=======================Remote desk===================//ubuntu
+
+sudo apt-get update -y
+sudo apt-get install lxde -y
+sudo apt-get install xrdp -y
+sudo passwd ubuntu
+
+and then connect with rpd remote desk from PC
+
+
+
+
+sudo apt update -y
+sudo apt install ubuntu-desktop -y
+sudo apt install tightvncserver -y
+sudo apt install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal -y
+sudo apt-get install lxde -y
+sudo apt-get install xrdp -y
+vncserver
+sudo passwd ubuntu
+dig +short myip.opendns.com @resolver1.opendns.com
+
+sudo apt update ubuntu-desktop tightvncserver gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal lxde xrdp -y
+
+
+
+kubectl describe deployment <delploymentt name>
+
+kubectl rollout status deployment/nginx-deployment
+
+
+
+refenrence
+=================================
+https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+=================================================
+
+
+kubectl get deploy
+
+kubectl get deploy -o wide
+
+
+=============scalling up and down==================
+
+
+kubectl scale deployment nginx-deployment --repltcas=4
+
+kubectl autoscale deployment nginx-deployment --min=5 --max=9 --cpu-percent=80
+
+
+checking pods
+----------------------//working from masternode
+==================reference  https://k8syaml.com/
+=============yaml=========================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sree2
+  labels:
+    app: web2
+spec:
+  selector:
+    matchLabels:
+      octopusexport: OctopusExport
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: web
+        octopusexport: OctopusExport
+    spec:
+      containers:
+        - name: hsql
+          image: hshar/mysql
+          ports:
+            - name: portforhttpd
+              containerPort: 3306
+              protocol: TCP
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - web
+                topologyKey: kubernetes.io/hostname
+
+============yaml end==========================
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: web
+    type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+
+   ================================================
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: sree2
+spec:
+  selector:
+    app: web2
+    type: NodePort
+  ports:
+    - protocol: TCP
+      port: 3306
+
+      ============================
+   hshar/webapp:latest
+    hshar/mysql
+docker pull hshar/mysql
+kubectl delete -f dep.yaml 
+
+
+//checking working
+kubectl get pods -o wide --all-namespaces
+kubectl apply -f caca.yaml
+ssh sreehari@knode
+sudo su
+curl http://10.0.1.7:80
+
+
+
+kubectl get pods -o wide
+kubectl get node
+
+
+sudo useradd -p $(openssl passwd -1 password) username
+
+
+mysql -u root -p password
+CREARE DATABASE MYROD
+USE MYPROD
+CREATE—TABLE products ( product_name VARCHAR(10), product_td VARCHAR(15));
+
+
+===========================================================================================================================================
+===========================================================================================================================================
+
+Deploy dashboard: kubectl apply -f https://github.com/kubernetes/dashboard/blob/v1.8.3/src/deploy/recommended/kubernetes-dashboard-arm.yaml
+Remove dashboard:
+kubectl delete deployment kubernetes-dashboard --namespace=kube-system
+kubectl delete service kubernetes-dashboard --namespace=kube-system
+kubectl delete role kubernetes-dashboard-minimal --namespace=kube-system
+kubectl delete rolebinding kubernetes-dashboard-minimal --namespace=kube-system
+kubectl delete sa kubernetes-dashboard --namespace=kube-system
+kubectl delete secret kubernetes-dashboard-certs --namespace=kube-system
+kubectl delete secret kubernetes-dashboard-key-holder --namespace=kube-system
+Try to deploy again:
+kubectl apply -f https://github.com/kubernetes/dashboard/blob/v1.8.3/src/deploy/recommended/kubernetes-dashboard-arm.yaml
+Observed result
+error: error converting YAML to JSON: yaml: line 325: mapping values are not allowed in this context
+
+Expected result
+deploy successful
+===========================================================================================================================================
+
+
+Workstation                                        Kubernetes
++------------------+                               +----------------------------------------------------+
+|                  |                               |                                                    |
+|                  |                               |                                                    |
+|  +------------+  |                               |  +------------+   apiserver        +------------+  |
+|  |            |  |  authentication with kubectl  |  |            |   proxy            |            |  |
+|  | kubectl    +------------------------------------>+ apiserver  +------------------->+ dashboard  |  |
+|  | proxy      |  |                               |  |            |                    |            |  |
+|  |            |  |                               |  |            |                    |            |  |
+|  +--------+---+  |                               |  |            |                    |            |  |
+|           ^      |                          +------>+            |  service account/  |            |  |
+|  localhost|      |                          |    |  |            |  kubeconfig        |            |  |
+|           |      |                          |    |  |            +<-------------------+            |  |
+|  +--------+---+  |                          |    |  |            |                    |            |  |
+|  |            |  |      direct access       |    |  +------------+                    +------+-----+  |
+|  | browser    +-----------------------------+    |                                           |        |
+|  |            |  |                               |                                           |        |
+|  |            +----------------------------------------------------------------------------->O        |
+|  +------------+  |      bypass apiserver         |                                        NodePort    |
+|                  |                               |                                                    |
+|                  |                               |                                                    |
++------------------+                               +----------------------------------------------------+
+
+===========================================================================================================================================
